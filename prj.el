@@ -1,0 +1,5 @@
+(jdee-project-file-version "1.0")
+(jdee-set-variables)
+(set 'jde-run-application-class "i2pht.ouiservice.Main")
+(set 'jdee-global-classpath '("/home/klaymen/doc/code/ouinet-java/build/libs/ouinet-java.jar"))
+(setq jdee-sourcepath '("/home/klaymen/doc/code/ouinet-java/src"))

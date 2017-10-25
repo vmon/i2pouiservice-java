@@ -1,0 +1,10 @@
+#emacs temperory files
+#editors temp file
+*~
+.\#*
+\#*\#
+
+#gnu global project files
+/GPATH
+/GRTAGS
+/GTAGS
