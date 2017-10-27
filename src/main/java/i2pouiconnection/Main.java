@@ -1,4 +1,4 @@
-package i2p.echoclient;
+package i2p.i2pouiconnection;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

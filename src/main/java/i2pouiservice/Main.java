@@ -1,4 +1,4 @@
-package i2p.ouiservice;
+package i2p.i2pouiservice;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
