@@ -1,5 +1,6 @@
-package i2p.echoclient;
+package i2p.i2pouiconnection;
 
+import java.io.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,6 +18,9 @@ import net.i2p.data.DataFormatException;
 import net.i2p.data.Destination;
 
 public class Main {
+
+    // The name of the file to send.
+    String fileName = "hhgttg.txt";
 
     public static void main(String[] args) {
         I2PSocketManager manager = I2PSocketManagerFactory.createManager();
@@ -53,11 +57,23 @@ public class Main {
             return;
         }
         try {
-            //Write to server
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            bw.write("Hello I2P!\n");
-            //Flush to make sure everything got sent
-            bw.flush();
+	    String line = null;
+	    // FileReader reads text files in the default encoding.
+	    FileReader fileReader = new FileReader(fileName);
+		
+	    // Always wrap FileReader in BufferedReader.
+	    BufferedReader bufferedReader =
+		new BufferedReader(fileReader);
+
+	    //Write to server
+	    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
+	    while((line = bufferedReader.readLine()) != null) {
+		bw.write(line);
+		//Flush to make sure everything got sent
+		bw.flush();
+	    }
+	    
             //Read from server
             BufferedReader br2 = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String s = null;
@@ -65,9 +81,18 @@ public class Main {
                 System.out.println("Received from server: " + s);
             }
             socket.close();
+
+	    // Always close files.
+	    bufferedReader.close();
+
         } catch (IOException ex) {
             System.out.println("Error occurred while sending/receiving!");
-        }
+	}
+	catch(FileNotFoundException ex) {
+	    System.out.println(       "Unable to open file '" +
+				      fileName + "'");
+	}
+
     }
 
 }

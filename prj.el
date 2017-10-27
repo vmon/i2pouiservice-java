@@ -1,5 +1,5 @@
 (jdee-project-file-version "1.0")
 (jdee-set-variables)
-(set 'jde-run-application-class "i2pht.ouiservice.Main")
-(set 'jdee-global-classpath '("/home/klaymen/doc/code/ouinet-java/build/libs/ouinet-java.jar"))
-(setq jdee-sourcepath '("/home/klaymen/doc/code/ouinet-java/src"))
+(set 'jde-run-application-class "i2p.i2pouiconnection.Main")
+(set 'jdee-global-classpath '("/home/klaymen/doc/code/i2pouiservice-java/build/libs/i2pouiservice-java.jar" "/home/klaymen/doc/code/i2p.i2p/build/i2p.jar" "/home/klaymen/doc/code/i2p.i2p/build/mstreaming.jar" "/home/klaymen/doc/code/i2p.i2p/build/streaming.jar"))
+(setq jdee-sourcepath '("/home/klaymen/doc/code/i2pouiservice-java/src/java/main/"))

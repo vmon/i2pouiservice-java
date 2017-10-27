@@ -7,48 +7,6 @@ dependencies {
         compile files('/home/klaymen/doc/code/i2p.i2p/build/streaming.jar')
 }
 
-mainClassName = 'i2p.ouiservice.Main'
-//mainClassName = 'i2p.ouiconnection.Main'
-//mainClassName = 'main'
-
-// sourceSets {  
-//    main {  
-//         java {  
-//             srcDir 'src'  
-//         }  
-//     }  
-//} 
-
-task testJar(type: Jar) {
-     baseName = 'i2pht'
-     version =  '0.1.0'
-}
+mainClassName = 'i2p.i2pouiconnection.Main'
 
 
-
-// task utilJar(type: Jar) {  
-//     from(sourceSets.main.output) {  
-//         include "my/util/package/**" 
-//         project.ext.serverExcludes.addAll(includes)
-//     }  
-// }
-
-// // client.jar
-// task clientJar(type: Jar) {  
-//     from(sourceSets.main.output) {  
-//         include "my/client/package/**"
-//         project.ext.serverExcludes.addAll(includes)
-//     }  
-// }
-
-// // server.jar
-// task serverJar(type: Jar) {  
-//     from(sourceSets.main.output) {  
-//         exclude project.ext.serverExcludes
-//     }  
-// }
-
-// jar {
-//     baseName = 'i2pht'
-//     version =  '0.1.0'
-// }
