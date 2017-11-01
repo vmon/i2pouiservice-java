@@ -20,7 +20,7 @@ import net.i2p.data.Destination;
 public class Main {
 
     // The name of the file to send.
-    static String fileName = "hhgttg.txt";
+    static String fileName = "/home/klaymen/doc/code/i2pouiservice-java/data/hhgttg.txt";
 
     public static void main(String[] args) {
         I2PSocketManager manager = I2PSocketManagerFactory.createManager();
@@ -33,6 +33,7 @@ public class Main {
             System.out.println("Failed to get a Destination string.");
             return;
         }
+        System.out.println("connecting the socket");
         Destination destination;
         try {
             destination = new Destination(destinationString);
@@ -68,6 +69,7 @@ public class Main {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
             while((line = bufferedReader.readLine()) != null) {
+                System.out.println("Sending: " + line);
                 bw.write(line);
                 //Flush to make sure everything got sent
                 bw.flush();
